@@ -16,8 +16,12 @@ import AuthorDetail from "./components/Author/AuthorDetail";
 import Complains from "./components/Complain/Complains";
 import AddComplain from "./components/Complain/AddComplain";
 import ComplainDetail from "./components/Complain/ComplainDetail";
+import { useContext } from "react";
+import { AuthContext } from "./Context/AuthContext.js";
+import Footer from "./components/Footer/Footer.js";
 
 function App() {
+  const { user } = useContext(AuthContext);
   return (
     <React.Fragment>
       <header>
@@ -27,6 +31,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} exact />
           <Route path="/add" element={<AddBook />} exact />
+
           <Route path="/books" element={<Books />} exact />
           <Route path="/books/:id" element={<BookDetail />} exact />
           <Route path="/about" element={<About />} exact />

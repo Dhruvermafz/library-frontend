@@ -4,9 +4,12 @@ const bookrouter = require("./routes/book-routes");
 const chatogaryrouter = require("./routes/chatogary-routes");
 const authorrouter = require("./routes/author-routes");
 const complainrouter = require("./routes/complains-routes");
-
-const app = express();
+const dotenv = require("dotenv");
 const cors = require("cors");
+/* App Config */
+dotenv.config();
+const app = express();
+const port = process.env.PORT || 4000;
 
 app.use(express.json());
 app.use(cors());
@@ -26,3 +29,12 @@ mongoose
 //mongo user name->admin
 //mongo password->st4b8CGTzFSKlBBv
 //e3QkUwNmd5WwuZFF
+
+app.get("/", (req, res) => {
+  res.status(200).send("Welcome to LibraryApp");
+});
+
+/* Port Listening In */
+app.listen(port, () => {
+  console.log(`Server is running in PORT ${port}`);
+});
