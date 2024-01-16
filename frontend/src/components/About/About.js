@@ -13,23 +13,29 @@ const About = () => {
         </div>
         <div>
           <p className="about-text">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries.
+            Welcome to "Library Management System," your one-stop solution for
+            efficient and modern library management. We are passionate about
+            promoting a love for reading and simplifying the process of managing
+            and accessing books.
             <br />
             <br />
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Richard McClintock, a Latin professor
-            at Hampden-Sydney College in Virginia, looked up one of the more
-            obscure Latin words, consectetur, from a Lorem Ipsum passage.
+            Our MERN stack-based Library Management System is designed to
+            provide a seamless experience for librarians and library users
+            alike. Leveraging the power of MongoDB, Express.js, React, and
+            Node.js, we offer a robust platform that ensures organized
+            bookkeeping, easy-to-use interfaces, and effective communication.
             <br />
             <br />
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour
+            Whether you are a student, a teacher, or a book enthusiast, our
+            platform caters to your needs. Manage your book inventory, track
+            borrowing history, explore new arrivals, and enjoy a user-friendly
+            environment that fosters a culture of learning.
+            <br />
+            <br />
+            At "Library Management System," we believe in the transformative
+            power of books, and we strive to create a digital library experience
+            that reflects this belief. Join us in our mission to make knowledge
+            accessible to everyone, everywhere.
             <br />
             <br />
             Your suggestions for improvement are always welcome!

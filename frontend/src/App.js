@@ -30,6 +30,7 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} exact />
+          <Route path="/about" element={<About />} />
           <Route path="/add" element={<AddBook />} exact />
 
           <Route path="/books" element={<Books />} exact />

@@ -4,6 +4,8 @@ const bookrouter = require("./routes/book-routes");
 const chatogaryrouter = require("./routes/chatogary-routes");
 const authorrouter = require("./routes/author-routes");
 const complainrouter = require("./routes/complains-routes");
+const transactionRoutes = require("./routes/transactions");
+const authRoutes = require("./routes/auth");
 const dotenv = require("dotenv");
 const cors = require("cors");
 /* App Config */
@@ -17,6 +19,8 @@ app.use("/books", bookrouter);
 app.use("/chatogary", chatogaryrouter);
 app.use("/author", authorrouter);
 app.use("/complain", complainrouter);
+app.use("/api/auth", authRoutes);
+app.use("/api/transactions", transactionRoutes);
 
 mongoose
   .connect(process.env.MONGO_URI)
