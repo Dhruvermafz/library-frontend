@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import AuthContext from "../../Context/AuthContext";
+
+import { AuthContext } from "../../Context/AuthContext";
 import { Switch } from "@mui/material";
 import "./Signin.css";
 const SignIn = () => {
@@ -78,15 +79,11 @@ const SignIn = () => {
             />
           </div>
           <button className="signin-button">Log In</button>
-          <a className="forget-pass" href="#home">
-            Forgot password?
-          </a>
         </form>
-        <div className="signup-option">
-          <p className="signup-question">
-            Don't have an account? Contact Librarian
-          </p>
-        </div>
+
+        <p className="signup-question">
+          Don't have an account? Contact Librarian
+        </p>
       </div>
     </div>
   );
