@@ -1,80 +1,48 @@
-import { React, useState } from "react";
-import { Link } from "react-router-dom";
-import "./Header.css";
-import MenuIcon from "@mui/icons-material/Menu";
-import ClearIcon from "@mui/icons-material/Clear";
-function Header() {
-  const [menutoggle, setMenutoggle] = useState(false);
+import React, { useState } from "react";
+import { AppBar, Tab, Tabs, Toolbar, Typography } from "@mui/material";
+import LibraryBooksIcon from "@mui/icons-material/LibraryBooks";
+import { NavLink } from "react-router-dom";
 
-  const Toggle = () => {
-    setMenutoggle(!menutoggle);
-  };
-
-  const closeMenu = () => {
-    setMenutoggle(false);
-  };
-
+const Header = () => {
+  const [value, setValue] = useState();
   return (
-    <div className="header">
-      <div className="logo-nav">
-        <Link to="/">
-          <a href="#home">LIBRARY</a>
-        </Link>
-      </div>
-      <div className="nav-right">
-        <input
-          className="search-input"
-          type="text"
-          placeholder="Search a Book"
-        />
-        <ul className={menutoggle ? "nav-options active" : "nav-options"}>
-          <li
-            className="option"
-            onClick={() => {
-              closeMenu();
-            }}
+    <div>
+      <AppBar sx={{ backgroundColor: "#000000" }} position="sticky">
+        <Toolbar>
+          <NavLink to="/" style={{ color: "white" }}>
+            <Typography>
+              <LibraryBooksIcon />
+            </Typography>
+          </NavLink>
+          <Tabs
+            sx={{ ml: "auto" }}
+            textColor="inherit"
+            indicatorColor="secondary"
+            value={value}
+            onChange={(e, val) => setValue(val)}
           >
-            <Link to="/">
-              <a href="#home">Home</a>
-            </Link>
-          </li>
-          <li
-            className="option"
-            onClick={() => {
-              closeMenu();
-            }}
-          >
-            <Link to="/books">
-              <a href="#books">Books</a>
-            </Link>
-          </li>
-          <li
-            className="option"
-            onClick={() => {
-              closeMenu();
-            }}
-          >
-            <Link to="/signin">
-              <a href="signin">SignIn</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-
-      <div
-        className="mobile-menu"
-        onClick={() => {
-          Toggle();
-        }}
-      >
-        {menutoggle ? (
-          <ClearIcon className="menu-icon" style={{ fontSize: 40 }} />
-        ) : (
-          <MenuIcon className="menu-icon" style={{ fontSize: 40 }} />
-        )}
-      </div>
+            <Tab LinkComponent={NavLink} to="/books" label="Books" />
+            <Tab LinkComponent={NavLink} to="/add" label="Add Book" />
+            {/* <Tab LinkComponent={NavLink} to="/about" label="About us"/> */}
+            <Tab LinkComponent={NavLink} to="/chatogary" label="Chatogaries" />
+            <Tab
+              LinkComponent={NavLink}
+              to="/addchatogary"
+              label="Add Chatogary"
+            />
+            <Tab LinkComponent={NavLink} to="/author" label="Authors" />
+            <Tab LinkComponent={NavLink} to="/addauthor" label="Add Author" />
+            <Tab LinkComponent={NavLink} to="/complain" label="Complains" />
+            <Tab
+              LinkComponent={NavLink}
+              to="/addcomplain"
+              label="Add Complain"
+            />
+          </Tabs>
+        </Toolbar>
+      </AppBar>
     </div>
   );
-}
+};
 
 export default Header;
