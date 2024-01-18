@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, FormLabel, TextField } from "@mui/material";
-
+import { REACT_APP_API_BASE_URL } from "../../config";
 const BookDetail = () => {
   const history = useNavigate();
   const [inputs, setInputs] = useState({});
@@ -11,7 +11,7 @@ const BookDetail = () => {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/books/${id}`)
+        .get(`${REACT_APP_API_BASE_URL}/books/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.book));
     };

@@ -3,13 +3,13 @@ import axios from "axios";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Complain.css";
-
+import { REACT_APP_API_BASE_URL } from "../../config";
 const Complain = (props) => {
   const history = useNavigate();
   const { _id, name, complainss } = props.complain;
   const deleteHandler = async () => {
     await axios
-      .delete(`${process.env.REACT_APP_API_URL}/complain/${_id}`)
+      .delete(`${REACT_APP_API_BASE_URL}/complain/${_id}`)
       .then((res) => res.data)
       .then(() => history("/"))
       .then(() => history("/complain"));

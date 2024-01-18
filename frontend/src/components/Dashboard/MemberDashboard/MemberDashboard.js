@@ -14,12 +14,12 @@ import { IconButton } from "@mui/material";
 import { AuthContext } from "../../../Context/AuthContext";
 import axios from "axios";
 import moment from "moment";
-
+import { REACT_APP_API_BASE_URL } from "../../../config";
 function MemberDashboard() {
   const [active, setActive] = useState("profile");
   const [sidebar, setSidebar] = useState(false);
 
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = REACT_APP_API_BASE_URL;
   const { user } = useContext(AuthContext);
   const [memberDetails, setMemberDetails] = useState(null);
 

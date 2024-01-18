@@ -3,13 +3,13 @@ import axios from "axios";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Chatogary.css";
-
+import { REACT_APP_API_BASE_URL } from "../../config";
 const Chatogary = (props) => {
   const history = useNavigate();
   const { _id, name } = props.chatogary;
   const deleteHandler = async () => {
     await axios
-      .delete(`${process.env.REACT_APP_API_URL}/chatogary/${_id}`)
+      .delete(`${REACT_APP_API_BASE_URL}/chatogary/${_id}`)
       .then((res) => res.data)
       .then(() => history("/"))
       .then(() => history("/chatogary"));

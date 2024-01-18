@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, FormLabel, TextField } from "@mui/material";
-
+import { REACT_APP_API_BASE_URL } from "../../config";
 const ComplainDetail = () => {
   const history = useNavigate();
   const [inputs, setInputs] = useState({});
@@ -11,7 +11,7 @@ const ComplainDetail = () => {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`${process.env.REACT_APP_API_URL}/complain/${id}`)
+        .get(`${REACT_APP_API_BASE_URL}/complain/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.complain));
     };
@@ -20,7 +20,7 @@ const ComplainDetail = () => {
 
   const sendRequest = async () => {
     await axios
-      .put(`http://localhost:8080/complain/${id}`, {
+      .put(`${REACT_APP_API_BASE_URL}/complain/${id}`, {
         name: String(inputs.name),
         complainss: String(inputs.complainss),
       })

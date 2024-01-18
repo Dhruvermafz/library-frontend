@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, FormLabel, TextField, Button } from "@mui/material";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
+import { REACT_APP_API_BASE_URL } from "../../config";
 const AddAuthor = () => {
   const history = useNavigate();
   const [inputs, setInputs] = useState({
@@ -12,7 +12,7 @@ const AddAuthor = () => {
 
   const sendRequest = async () => {
     axios
-      .post("http://localhost:8080/author", {
+      .post(`${REACT_APP_API_BASE_URL}/author`, {
         name: String(inputs.name),
         language: String(inputs.language),
       })

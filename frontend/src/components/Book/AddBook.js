@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { FormLabel, TextField, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import { REACT_APP_API_BASE_URL } from "../../config";
 const AddBook = () => {
   const history = useNavigate();
   const [inputs, setInputs] = useState({
@@ -16,7 +16,7 @@ const AddBook = () => {
 
   const sendRequest = async () => {
     axios
-      .post(`${process.env.REACT_APP_API_URL}/books`, {
+      .post(`${REACT_APP_API_BASE_URL}/books`, {
         name: String(inputs.name),
         author: String(inputs.author),
         chatogary: String(inputs.chatogary),

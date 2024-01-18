@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./Chatogary.css";
 import axios from "axios";
 import Chatogary from "./Chatogary";
-
-const URL = `${process.env.REACT_APP_API_URL}/chatogary`;
+import { REACT_APP_API_BASE_URL } from "../../config";
+const URL = `${REACT_APP_API_BASE_URL}/chatogary`;
 
 const fetchHandler = async () => {
   return await axios.get(URL).then((res) => res.data);

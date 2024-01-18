@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { FormLabel, TextField, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import { REACT_APP_API_BASE_URL } from "../../config";
 const AddChatogary = () => {
   const history = useNavigate();
   const [inputs, setInputs] = useState({
@@ -12,7 +12,7 @@ const AddChatogary = () => {
 
   const sendRequest = async () => {
     axios
-      .post(`${process.env.REACT_APP_API_URL}/chatogary`, {
+      .post(`${REACT_APP_API_BASE_URL}/chatogary`, {
         name: String(inputs.name),
       })
       .then((res) => res.data);

@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 import "./Author.css";
 import axios from "axios";
 import Author from "./Author";
-
-const URL = "http://localhost:8080/author";
+import { REACT_APP_API_BASE_URL } from "../../config";
 
 const fetchHandler = async () => {
-  return await axios.get(URL).then((res) => res.data);
+  return await axios.get(REACT_APP_API_BASE_URL).then((res) => res.data);
 };
 
 const Authors = () => {

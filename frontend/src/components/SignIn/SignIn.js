@@ -4,6 +4,7 @@ import axios from "axios";
 import { AuthContext } from "../../Context/AuthContext";
 import { Switch } from "@mui/material";
 import "./Signin.css";
+import { REACT_APP_API_BASE_URL } from "../../config";
 const SignIn = () => {
   const [isStudent, setIsStudent] = useState(true);
   const [admissionId, setAdmissionId] = useState();
@@ -12,7 +13,7 @@ const SignIn = () => {
   const [error, setError] = useState("");
   const { dispatch } = useContext(AuthContext);
 
-  const API_URL = process.env.REACT_APP_API_URL;
+  const API_URL = REACT_APP_API_BASE_URL;
 
   const loginCall = async (userCredential, dispatch) => {
     dispatch({ type: "LOGIN_START" });

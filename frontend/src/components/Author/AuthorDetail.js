@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import { Box, Button, FormLabel, TextField } from "@mui/material";
+import { REACT_APP_API_BASE_URL } from "../../config";
 
 const AuthorDetail = () => {
   const history = useNavigate();
@@ -11,7 +12,7 @@ const AuthorDetail = () => {
   useEffect(() => {
     const fetchHandler = async () => {
       await axios
-        .get(`http://localhost:8080/author/${id}`)
+        .get(`${REACT_APP_API_BASE_URL}/author/${id}`)
         .then((res) => res.data)
         .then((data) => setInputs(data.author));
     };

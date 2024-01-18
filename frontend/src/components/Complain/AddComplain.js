@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import axios from "axios";
 import { FormLabel, TextField, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
-
+import { REACT_APP_API_BASE_URL } from "../../config";
 const AddComplain = () => {
   const history = useNavigate();
   const [inputs, setInputs] = useState({
@@ -13,7 +13,7 @@ const AddComplain = () => {
 
   const sendRequest = async () => {
     axios
-      .post(`${process.env.REACT_APP_API_URL}/complain`, {
+      .post(`${REACT_APP_API_BASE_URL}/complain`, {
         name: String(inputs.name),
         complainss: String(inputs.complainss),
       })
