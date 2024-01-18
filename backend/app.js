@@ -14,7 +14,18 @@ const app = express();
 const port = process.env.PORT || 4000;
 
 app.use(express.json());
-app.use(cors());
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://librarymanagement-system.vercel.app",
+    ],
+    credentials: true,
+    optionSuccessStatus: 200,
+  })
+);
+
 app.use("/books", bookrouter);
 app.use("/chatogary", chatogaryrouter);
 app.use("/author", authorrouter);
